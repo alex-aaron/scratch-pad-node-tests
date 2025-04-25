@@ -47,7 +47,9 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-
+  for (let key in object){
+    console.log(key);
+  }
   // YOUR CODE ABOVE HERE //
 }
 
