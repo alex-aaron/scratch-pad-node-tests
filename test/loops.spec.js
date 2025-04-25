@@ -37,20 +37,6 @@ const {
 //     precourseAssessment: 100,
 //   };
 
-//   describe('printArrayValues()', () => {
-//     it('should log each value in arrayOne', () => {
-//       printArrayValues(arrayOne);
-//       console.log.args.forEach((e, i) =>{
-//         assert.equal(e, arrayOne[i]);
-//       });
-//     });
-//     it('should call log each value in arrayTwo', () => {
-//       printArrayValues(arrayTwo);
-//       console.log.args.forEach((e, i) => {
-//         assert.equal(e, arrayTwo[i]);
-//       })
-//     });
-//   });
 
 //   describe('printArrayValuesInReverse()', () => {
 //     it('should log each value in arrayOne in reverse', () => {
@@ -129,11 +115,36 @@ describe("loops", () => {
       printArrayValues(e.input);
       it(`should log each value in array ${i}`, () => {
         console.log.args.forEach((current, index) => {
-          assert.equal(current[0], expected[index]);
+          assert.equal(current[0], e.expected[index]);
         })
       })
     })
   });
+
+  describe("printArrayValuesInReverse()", () => {
+    beforeEach(() => {
+      sinon.spy(console, 'log');
+    });
+    afterEach(() => {
+      console.log.restore();
+    });
+
+    var tests = [
+      {input: ['a', 'b', 'c'], expected: ['c', 'b', 'a']},
+      {input: ['first', 'second', 'third'], expected: ['third', 'second', 'first']},
+      {input: [10, 20, 30], expected: [30, 20, 10]},
+    ];
+
+    tests.forEach((e, i) => {
+      it(`should log each value in array ${i} in reverse`, () => {
+        printArrayValuesInReverse(e.input);
+        console.log.args.forEach((current, index) => {
+          assert.equal(current[0], e.expected[index]);
+        });
+      });
+    });
+
+  })
 
   describe("printObjectKeys", () => {
     beforeEach(() => {
