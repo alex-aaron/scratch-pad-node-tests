@@ -71,4 +71,42 @@ describe("stringy", () => {
       });
   });
 
+  describe("join()", function () {
+    it('should return all input Strings concatenated', function() {
+        expect(join('Hello', 'there,', 'you', 'prince!')).to.equal('Hello there, you prince!');
+        expect(join('Hello', 'there,', 'you', 'princess!')).to.equal('Hello there, you princess!');
+    });
+});
+
+  describe("longest()", function () {
+      it('should return the longest of two input Strings', function() {
+          expect(longest('abc', 'z')).to.equal('abc');
+          expect(longest('a', 'xyz')).to.equal('xyz');
+      });
+  });
+
+  describe("sortAscending()", function () {
+      it('should return 1 if stringOne is alphabetically higher than stringTwo', function() {
+          expect(sortAscending('abc', 'acb')).to.equal(1);
+      });
+      it('should return -1 if stringOne is alphabetically lower than stringTwo', function() {
+          expect(sortAscending('acb', 'abc')).to.equal(-1);
+      });
+      it('should return 0 if stringOne is alphabetically equivalent to stringTwo', function() {
+          expect(sortAscending('abc', 'abc')).to.equal(0);
+      });
+  });
+
+  describe("sortDescending()", function () {
+    it('should return -1 if stringOne is alphabetically lower than stringTwo', function() {
+        expect(sortDescending('abc', 'acb')).to.equal(-1);
+    });
+    it('should return 1 if stringOne is alphabetically higher than stringTwo', function() {
+        expect(sortDescending('acb', 'abc')).to.equal(1);
+    });
+    it('should return 0 if stringOne is alphabetically equivalent to stringTwo', function() {
+        expect(sortDescending('abc', 'abc')).to.equal(0);
+    });
+  });
+
 });
