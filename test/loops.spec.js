@@ -38,24 +38,6 @@ const {
 //   };
 
 
-//   describe('printArrayValuesInReverse()', () => {
-//     it('should log each value in arrayOne in reverse', () => {
-//       const reverse = arrayOne.concat().reverse();
-//       printArrayValuesInReverse(arrayOne);
-//       console.log.args.forEach((e, i) => {
-//         assert.equal(e, reverse[i]);
-//       });
-//     });
-
-//     it('should call log each value in arrayTwo in reverse', () => {
-//       const reverse = arrayTwo.concat().reverse();
-//       printArrayValuesInReverse(arrayTwo);
-//       console.log.args.forEach((e, i) => {
-//         assert.equal(e, reverse[i]);
-//       })
-//     });
-//   });
-
 //   describe('getObjectKeys()', () => {
 //     it('should return an array', () => {
 //       assert.equal(Array.isArray(getObjectKeys(objectOne)), true);
@@ -144,7 +126,34 @@ describe("loops", () => {
       });
     });
 
-  })
+  });
+
+  describe("getObjectKeys", () => {
+    beforeEach(() => {
+      sinon.spy(console, 'log');
+    });
+    afterEach(() => {
+      console.log.restore();
+    });
+
+    var tests = [
+      {input: { first: "a", second: "b", third: "c"}, expected: ['first', 'second', 'third']},
+      {input: { a: 1, b: 2, c: 3 }, expected: [ 'a', 'b', 'c' ]},
+      {input: { testOne: 90, testTwo: 95, testThree: 100 }, expected: ['testOne', 'testTwo', 'testThree']}
+    ];
+
+    it('should return an array', () => {
+      assert.equal(Array.isArray(getObjectKeys({ a: 1, b: 2, c: 3})), true);
+      assert.equal(Array.isArray(getObjectKeys({ first: "a", second: "b"})), true);
+    });
+
+    tests.forEach((e, i) => {
+      it(`should return object ${i}'s keys in an array`, () => {
+        assert.deepEqual(getObjectKeys(e.input), e.expected);
+      })
+    });
+
+  });
 
   describe("printObjectKeys", () => {
     beforeEach(() => {
