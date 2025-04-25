@@ -4,6 +4,7 @@ const chai = require('chai');
 const { assert, expect } = chai;
 const sinon = require('sinon');
 const stringy = require("../day-1/stringy");
+const { reverseString } = require('../day-1/homework/reverse-string');
 const {
   length,
   toUpperCase,
@@ -108,5 +109,12 @@ describe("stringy", () => {
         expect(sortDescending('abc', 'abc')).to.equal(0);
     });
   });
+
+  describe("homework: reverse-string()", function () {
+    it('should return the input String, reversed', function () {
+        expect(reverseString('hello')).to.equal('olleh');
+        expect(reverseString('goodbye')).to.equal('eybdoog');
+    });
+});
 
 });
