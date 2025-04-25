@@ -84,7 +84,7 @@ function beginsWith(string, char) {
 
 function endsWith(string, char) {
   // YOUR CODE BELOW HERE //
-  return string[string.length - 1].toUpperCase === char.toUpperCase();
+  return string[string.length - 1].toUpperCase() === char.toUpperCase();
   // YOUR CODE ABOVE HERE //
 }
 

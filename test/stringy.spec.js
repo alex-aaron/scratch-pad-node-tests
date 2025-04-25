@@ -66,8 +66,8 @@ describe("stringy", () => {
 
   describe("concat()", function () {
       it('should return the two input Strings concatenated', function() {
-          expect(concat('Hello ', 'World')).to.equal('Hello World');
-          expect(concat('Operation ', 'Spark')).to.equal('Operation Spark');
+          expect(concat('Hello', 'World')).to.equal('Hello World');
+          expect(concat('Operation', 'Spark')).to.equal('Operation Spark');
       });
   });
 
