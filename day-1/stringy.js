@@ -16,7 +16,7 @@ function length(string) {
 */
 function toLowerCase(string) {
   // YOUR CODE BELOW HERE //
- 
+  return string.toLowerCase();
   // YOUR CODE ABOVE HERE //
 }
 
@@ -26,7 +26,7 @@ function toLowerCase(string) {
 
 function toUpperCase(string) {
   // YOUR CODE BELOW HERE //
-
+  return string.toUpperCase();
   // YOUR CODE ABOVE HERE //
 }
 
@@ -46,7 +46,7 @@ function toUpperCase(string) {
 
 function toDashCase(string) {
   // YOUR CODE BELOW HERE //
-
+  return string.split(" ").join("-").toLowerCase();
   // YOUR CODE ABOVE HERE //
 }
 
@@ -65,7 +65,7 @@ function toDashCase(string) {
 
 function beginsWith(string, char) {
   // YOUR CODE BELOW HERE //
-
+  return string[0].toUpperCase() === char.toUpperCase();
   // YOUR CODE ABOVE HERE //
 }
 
@@ -84,19 +84,22 @@ function beginsWith(string, char) {
 
 function endsWith(string, char) {
   // YOUR CODE BELOW HERE //
-
+  return string[string.length - 1].toUpperCase === char.toUpperCase();
   // YOUR CODE ABOVE HERE //
 }
 
 /**
 * Given two input Strings, return the Strings concatenated into one.
 *
+* Example:
+*     concat('Hello', 'World'); // => 'Hello World'
+*
 * TIP: What's the operator to concatenate two Strings?
 */
 
 function concat(stringOne, stringTwo) {
   // YOUR CODE BELOW HERE //
-
+  return stringOne + " " + stringTwo;
   // YOUR CODE ABOVE HERE //
 }
 
@@ -114,7 +117,7 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
   // YOUR CODE BELOW HERE //
   var args = Array.from(arguments);
-
+  return args.join();
   // YOUR CODE ABOVE HERE //
 }
 
@@ -169,7 +172,7 @@ module.exports = {
   length: length,
   toLowerCase: toLowerCase,
   toUpperCase: toUpperCase,
-  toDashCaseh: toDashCase,
+  toDashCase: toDashCase,
   beginsWith: beginsWith,
   endsWith: endsWith,
   concat: concat,
