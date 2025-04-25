@@ -73,10 +73,20 @@ describe("loops", () => {
   describe('getObjectKeys()', () => {
     it('should return an array', () => {
       assert.equal(Array.isArray(getObjectKeys(objectOne)), true);
-    })
+    });
     it('should return a correct array of object keys', () => {
       assert.deepEqual(getObjectKeys(objectOne), ['firstName', 'middleName', 'lastName']);
-    })
+    });
+    it('should return a correct array of object keys', () => {
+      var tests = [
+        {args: { first: "a", second: "b", third: "c"}, expected: ['first', 'second', 'third']},
+        {args: { a: 1, b: 2, c: 3 }, expected: [ 'a', 'b', 'c' ]},
+        {args: { testOne: 90, testTwo: 95, testThree: 100 }, expected: ['testOne', 'testTwo', 'testThree']}
+      ];
+      tests.forEach(({args, expected}) => {
+        assert.deepEqual(getObjectKeys(args), expected);
+      })
+    });
   });
 
 })
