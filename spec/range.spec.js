@@ -1,11 +1,3 @@
-const mocha = require('mocha');
-const describe = mocha.describe;
-const chai = require('chai');
-const { assert, expect } = chai;
-const sinon = require('sinon');
-const _ = require('underscore');
-const { range } = require('../day-3/homework/range');
-
 describe("range()", () => {
 
   it('should return an array', () => {
