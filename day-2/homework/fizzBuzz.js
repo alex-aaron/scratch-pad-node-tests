@@ -22,7 +22,7 @@ function fizzBuzz() {
   // YOUR CODE GOES ABOVE HERE //
 }
 
-fizzBuzz();
+// fizzBuzz();
 
 // DO NOT REMOVE //
 module.exports = {
