@@ -1,9 +1,19 @@
 body {
-  background-image: url("images/3224665.jpg")
+  background-image: url("images/3135763.jpg")
 }
 
 #home-page-nav-header {
+  font-family: "Source Sans",;
+  font-weight: 700;
   color: white;
+}
+
+#scratchpad-header {
+  font-family: "Source Sans",;
+  font-weight: 400;
+  font-size: 1.05em;
+  color: white;
+
 }
 
 .card-row {
